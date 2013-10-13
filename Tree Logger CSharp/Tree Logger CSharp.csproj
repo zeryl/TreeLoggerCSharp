@@ -72,7 +72,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddBuilding.cs" />
     <Compile Include="DebugScreen.cs">
       <SubType>Form</SubType>
     </Compile>

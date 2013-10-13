@@ -11,8 +11,12 @@ Originally created by DeeBeeR. http://www.reddit.com/u/DeeBeeR
 
 /r/Incremental_Games thread link: http://www.reddit.com/r/incremental_games/comments/1odbqp/simple_open_source_cookie_clicker_clone_i_made_in/
 
---Plans
+--Plans--
+
 1. Upgrades, highest priority at the minute.
+ 
 2. More buildings
+
 3. More options
+
 4. Maybe graphics for the game

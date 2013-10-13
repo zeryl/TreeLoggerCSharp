@@ -94,6 +94,22 @@ namespace Tree_Logger_CSharp
             //Commented out due to not needed until saves, maybe//
             //it might not be needed at all                     //
             //////////////////////////////////////////////////////
+            // Load up save, if exists
+            this.Logs = Properties.Settings.Default.Logs;
+            this.LogsPerSecond = Properties.Settings.Default.LogsPerSecond;
+            this.ClickLogs = Properties.Settings.Default.ClickLogs;
+            this.SelfClickLogs = Properties.Settings.Default.SelfClickLogs;
+            this.TotalTimesClicked = Properties.Settings.Default.TotalTimesClicked;
+            this.Clicker = Properties.Settings.Default.Clicker;
+            this.Lumberjack = Properties.Settings.Default.Lumberjack;
+            this.LumberYard = Properties.Settings.Default.LumberYard;
+            this.Sawmill = Properties.Settings.Default.Sawmill;
+            this.Forest = Properties.Settings.Default.Forest;
+            this.Shipment = Properties.Settings.Default.Shipment;
+            this.Alchemy = Properties.Settings.Default.Alchemy;
+            this.Portal = Properties.Settings.Default.Portal;
+            this.Extractor = Properties.Settings.Default.Extractor;
+
         }
 
         private void btnTree_Click(object sender, EventArgs e)
@@ -427,8 +443,25 @@ namespace Tree_Logger_CSharp
         #region Form Closing
         private void TreeLogger_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Properties.Settings.Default.Logs = this.Logs;
+            Properties.Settings.Default.LogsPerSecond = this.LogsPerSecond;
+            Properties.Settings.Default.ClickLogs = this.ClickLogs;
+            Properties.Settings.Default.SelfClickLogs = this.SelfClickLogs;
+            Properties.Settings.Default.TotalTimesClicked = this.TotalTimesClicked;
+            Properties.Settings.Default.Clicker = this.Clicker;
+            Properties.Settings.Default.Lumberjack = this.Lumberjack;
+            Properties.Settings.Default.LumberYard = this.LumberYard;
+            Properties.Settings.Default.Sawmill = this.Sawmill;
+            Properties.Settings.Default.Forest = this.Forest;
+            Properties.Settings.Default.Shipment = this.Shipment;
+            Properties.Settings.Default.Alchemy = this.Alchemy;
+            Properties.Settings.Default.Portal = this.Portal;
+            Properties.Settings.Default.Extractor = this.Extractor;
+            Properties.Settings.Default.Save();
+
+
             DialogResult QuitResult =
-           MessageBox.Show("Thanks for playing my game! There is no save feature yet included in the game. Are you sure you wish to quit?",
+           MessageBox.Show("Thanks for playing my game! The save feature is very immature. Are you sure you wish to quit?",
                "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question); //Set message box text
 
             if (QuitResult == DialogResult.No) //Check if the result is true or false

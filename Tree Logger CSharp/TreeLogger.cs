@@ -20,13 +20,14 @@ namespace Tree_Logger_CSharp
         #region Variables
         //Other Variables
         bool CheckBuyBuildings = false; //Checks if the buildings panel is open
+        bool CheckOptions = false; //Checks if the options panel is open
         int AutoSaveTime = 60; //Time for autosave
 
         //Log Variables
         public double Logs = 0; //Amount of Logs
         decimal LogsPerSecond = 0; //Amount of Logs you get per second
         double ClickLogs = 1; //Amount of Logs you get per click
-        double SelfClickLogs = 0; //Amount of Logs you've clicked manually
+        double SelfClickedLogs = 0; //Amount of Logs you've clicked manually
         int TotalTimesClicked = 0; //Total times you've clicked
         double DebugLPS = 0; //Debug LPS you've added
 
@@ -89,7 +90,7 @@ namespace Tree_Logger_CSharp
             this.Logs = Properties.Settings.Default.Logs;
             this.LogsPerSecond = Properties.Settings.Default.LogsPerSecond;
             this.ClickLogs = Properties.Settings.Default.ClickLogs;
-            this.SelfClickLogs = Properties.Settings.Default.SelfClickLogs;
+            this.SelfClickedLogs = Properties.Settings.Default.SelfClickedLogs;
             this.TotalTimesClicked = Properties.Settings.Default.TotalTimesClicked;
             this.Clicker = Properties.Settings.Default.Clicker;
             this.Lumberjack = Properties.Settings.Default.Lumberjack;
@@ -103,11 +104,12 @@ namespace Tree_Logger_CSharp
             #endregion
 
         }
+
         #region Tree Click button
         private void btnTree_Click(object sender, EventArgs e)
         {
             Logs += ClickLogs; //Add Logs from ClickLogs
-            SelfClickLogs += ClickLogs; //Adds ClickLogs to manually clicked logs
+            SelfClickedLogs += ClickLogs; //Adds ClickLogs to manually clicked logs
             TotalTimesClicked++; //Add 1 to total times clicked
             lblLogsInfo.Focus(); //Focus label to prevent holding enter/return abuse
 
@@ -127,7 +129,7 @@ namespace Tree_Logger_CSharp
 
             //Refresh Logs and LPS
             lblLogsInfo.Text = String.Format("Logs: {0:n0}\nLPS: {1:#,###,##0.#}\nClicked: {2}",
-                Logs, LogsPerSecond, SelfClickLogs); //Display how many logs you have, how many you get
+                Logs, LogsPerSecond, SelfClickedLogs); //Display how many logs you have, how many you get
                                                      //per second and total manually clicked
 
             //Refresh form caption to display how many logs
@@ -435,32 +437,44 @@ namespace Tree_Logger_CSharp
         private void TreeLogger_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            //Save the game
-            Properties.Settings.Default.Logs = this.Logs;
-            Properties.Settings.Default.LogsPerSecond = this.LogsPerSecond;
-            Properties.Settings.Default.ClickLogs = this.ClickLogs;
-            Properties.Settings.Default.SelfClickLogs = this.SelfClickLogs;
-            Properties.Settings.Default.TotalTimesClicked = this.TotalTimesClicked;
-            Properties.Settings.Default.Clicker = this.Clicker;
-            Properties.Settings.Default.Lumberjack = this.Lumberjack;
-            Properties.Settings.Default.LumberYard = this.LumberYard;
-            Properties.Settings.Default.Sawmill = this.Sawmill;
-            Properties.Settings.Default.Forest = this.Forest;
-            Properties.Settings.Default.Shipment = this.Shipment;
-            Properties.Settings.Default.Alchemy = this.Alchemy;
-            Properties.Settings.Default.Portal = this.Portal;
-            Properties.Settings.Default.Extractor = this.Extractor;
-            Properties.Settings.Default.Save();
+            
 
 
             DialogResult QuitResult =
-           MessageBox.Show("Thanks for playing my game! The save feature is very immature. Are you sure you wish to quit?",
-               "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question); //Set message box text
+           MessageBox.Show("Thanks for playing my game! Are you sure you wish to quit?",
+               "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question); //Sets quit messagebox text
 
-            if (QuitResult == DialogResult.No) //Check if the result is true or false
+            DialogResult SaveResult =
+                MessageBox.Show("Do you wish to save your game?",
+                "Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question); //Sets save messagebox text
+
+            if (QuitResult == DialogResult.No) /*Check if the result is true or */  { e.Cancel = true; }
+            else if (DialogResult == DialogResult.Yes)                              //Cancels the shutdown
             {
-                e.Cancel = true; //Cancels the closing     
+
+                if (SaveResult == DialogResult.Yes)
+                {
+                    //Save the game and exits the whole application
+                    Properties.Settings.Default.Logs = this.Logs;
+                    Properties.Settings.Default.LogsPerSecond = this.LogsPerSecond;
+                    Properties.Settings.Default.ClickLogs = this.ClickLogs;
+                    Properties.Settings.Default.SelfClickedLogs = this.SelfClickedLogs;
+                    Properties.Settings.Default.TotalTimesClicked = this.TotalTimesClicked;
+                    Properties.Settings.Default.Clicker = this.Clicker;
+                    Properties.Settings.Default.Lumberjack = this.Lumberjack;
+                    Properties.Settings.Default.LumberYard = this.LumberYard;
+                    Properties.Settings.Default.Sawmill = this.Sawmill;
+                    Properties.Settings.Default.Forest = this.Forest;
+                    Properties.Settings.Default.Shipment = this.Shipment;
+                    Properties.Settings.Default.Alchemy = this.Alchemy;
+                    Properties.Settings.Default.Portal = this.Portal;
+                    Properties.Settings.Default.Extractor = this.Extractor;
+                    Properties.Settings.Default.Save();
+                    Application.Exit();
+                }
             }
+            
+
         }
 
         private void TreeLogger_FormClosed(object sender, FormClosedEventArgs e)
@@ -500,7 +514,7 @@ namespace Tree_Logger_CSharp
         private void tmrAutoSave_Tick(object sender, EventArgs e)
         {
 
-            //Auto save the game
+            //Auto save the game every 60 seconds
             if (AutoSaveTime > 0) { AutoSaveTime--; lblSaved.Visible = false; }
             else
             {
@@ -508,7 +522,7 @@ namespace Tree_Logger_CSharp
                 Properties.Settings.Default.Logs = this.Logs;
                 Properties.Settings.Default.LogsPerSecond = this.LogsPerSecond;
                 Properties.Settings.Default.ClickLogs = this.ClickLogs;
-                Properties.Settings.Default.SelfClickLogs = this.SelfClickLogs;
+                Properties.Settings.Default.SelfClickedLogs = this.SelfClickedLogs;
                 Properties.Settings.Default.TotalTimesClicked = this.TotalTimesClicked;
                 Properties.Settings.Default.Clicker = this.Clicker;
                 Properties.Settings.Default.Lumberjack = this.Lumberjack;
@@ -523,6 +537,90 @@ namespace Tree_Logger_CSharp
                 lblSaved.Visible = true;
                 AutoSaveTime = 60;
             }
+        }
+        #endregion
+
+        #region Options menu
+        private void btnOption_Click(object sender, EventArgs e)
+        {
+
+            if (!CheckOptions) //If CheckOptions is false, it will show the panel
+            {
+                pOptionsPanel.Visible = true;
+                CheckOptions = true;
+            }
+            else if (CheckOptions) //If CheckOptions is true, it will hide the panel
+            {
+                pOptionsPanel.Visible = false;
+                CheckOptions = false;
+            }
+
+        }
+        #endregion
+
+        #region Reset Save
+        private void btnResetSave_Click(object sender, EventArgs e)
+        {
+            DialogResult QuitResult = MessageBox.Show("Are you sure you want to wipe your save? This is not a reversible option!",
+               "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation); //Set message box text
+
+            if (QuitResult == DialogResult.Yes)
+            {
+                Properties.Settings.Default.Logs = 0;
+                Properties.Settings.Default.LogsPerSecond = 0;
+                Properties.Settings.Default.ClickLogs = 1;
+                Properties.Settings.Default.SelfClickedLogs = 0;
+                Properties.Settings.Default.TotalTimesClicked = 0;
+                Properties.Settings.Default.Clicker = 0;
+                Properties.Settings.Default.Lumberjack = 0;
+                Properties.Settings.Default.LumberYard = 0;
+                Properties.Settings.Default.Sawmill = 0;
+                Properties.Settings.Default.Forest = 0;
+                Properties.Settings.Default.Shipment = 0;
+                Properties.Settings.Default.Alchemy = 0;
+                Properties.Settings.Default.Portal = 0;
+                Properties.Settings.Default.Extractor = 0;
+                Properties.Settings.Default.Save();
+
+                //Reload save
+                this.Logs = Properties.Settings.Default.Logs;
+                this.LogsPerSecond = Properties.Settings.Default.LogsPerSecond;
+                this.ClickLogs = Properties.Settings.Default.ClickLogs;
+                this.SelfClickedLogs = Properties.Settings.Default.SelfClickedLogs;
+                this.TotalTimesClicked = Properties.Settings.Default.TotalTimesClicked;
+                this.Clicker = Properties.Settings.Default.Clicker;
+                this.Lumberjack = Properties.Settings.Default.Lumberjack;
+                this.LumberYard = Properties.Settings.Default.LumberYard;
+                this.Sawmill = Properties.Settings.Default.Sawmill;
+                this.Forest = Properties.Settings.Default.Forest;
+                this.Shipment = Properties.Settings.Default.Shipment;
+                this.Alchemy = Properties.Settings.Default.Alchemy;
+                this.Portal = Properties.Settings.Default.Portal;
+                this.Extractor = Properties.Settings.Default.Extractor;
+            }
+        }
+        #endregion
+
+        #region Manual Save
+        private void btnManualSave_Click(object sender, EventArgs e)
+        {
+            //Save to application settings
+            Properties.Settings.Default.Logs = this.Logs;
+            Properties.Settings.Default.LogsPerSecond = this.LogsPerSecond;
+            Properties.Settings.Default.ClickLogs = this.ClickLogs;
+            Properties.Settings.Default.SelfClickedLogs = this.SelfClickedLogs;
+            Properties.Settings.Default.TotalTimesClicked = this.TotalTimesClicked;
+            Properties.Settings.Default.Clicker = this.Clicker;
+            Properties.Settings.Default.Lumberjack = this.Lumberjack;
+            Properties.Settings.Default.LumberYard = this.LumberYard;
+            Properties.Settings.Default.Sawmill = this.Sawmill;
+            Properties.Settings.Default.Forest = this.Forest;
+            Properties.Settings.Default.Shipment = this.Shipment;
+            Properties.Settings.Default.Alchemy = this.Alchemy;
+            Properties.Settings.Default.Portal = this.Portal;
+            Properties.Settings.Default.Extractor = this.Extractor;
+            Properties.Settings.Default.Save();
+            MessageBox.Show("Saved!", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
         #endregion
     }

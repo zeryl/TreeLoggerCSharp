@@ -62,12 +62,12 @@ namespace Tree_Logger_CSharp.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double SelfClickLogs {
+        public double SelfClickedLogs {
             get {
-                return ((double)(this["SelfClickLogs"]));
+                return ((double)(this["SelfClickedLogs"]));
             }
             set {
-                this["SelfClickLogs"] = value;
+                this["SelfClickedLogs"] = value;
             }
         }
         

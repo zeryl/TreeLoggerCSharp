@@ -23,14 +23,14 @@ namespace Tree_Logger_CSharp
 
         //Log Variables
         public double Logs = 0; //Amount of Logs
-        decimal LogsPerSecond = 0; //Amount of Logs you get per second
+        public decimal LogsPerSecond = 0; //Amount of Logs you get per second
         double ClickLogs = 1; //Amount of Logs you get per click
         double SelfClickLogs = 0; //Amount of Logs you've clicked manually
         int TotalTimesClicked = 0; //Total times you've clicked
-        double DebugLPS = 0; //Debug LPS you've added
+        public double DebugLPS = 0; //Debug LPS you've added
 
         //Clicker Variables
-        int Clicker = 0;
+        public int Clicker = 0;
         double ClickerPrice = 15;
         double ClickerLPS = 0.1;
 
@@ -497,7 +497,7 @@ namespace Tree_Logger_CSharp
         {
             if (e.Control && e.Shift && e.KeyCode == Keys.S)
             {
-                DebugScreen showDebugScreen = new DebugScreen(); //Create a new instance of the debug screen
+                DebugScreen showDebugScreen = new DebugScreen(this); //Create a new instance of the debug screen
                 showDebugScreen.Show(); //Show the debug screen
             }
         #endregion

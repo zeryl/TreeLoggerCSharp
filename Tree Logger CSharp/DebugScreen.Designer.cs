@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnAddLogs = new System.Windows.Forms.Button();
-            this.txtAddLogs = new System.Windows.Forms.TextBox();
             this.btnAddLPS = new System.Windows.Forms.Button();
             this.txtAddLPS = new System.Windows.Forms.TextBox();
             this.btnAddClicker = new System.Windows.Forms.Button();
@@ -50,6 +49,8 @@
             this.txtAddPortal = new System.Windows.Forms.TextBox();
             this.btnAddExtractor = new System.Windows.Forms.Button();
             this.txtAddExtractor = new System.Windows.Forms.TextBox();
+            this.txtAddLogs = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddLogs)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddLogs
@@ -62,13 +63,6 @@
             this.btnAddLogs.UseVisualStyleBackColor = true;
             this.btnAddLogs.Click += new System.EventHandler(this.btnAddLogs_Click);
             // 
-            // txtAddLogs
-            // 
-            this.txtAddLogs.Location = new System.Drawing.Point(5, 12);
-            this.txtAddLogs.Name = "txtAddLogs";
-            this.txtAddLogs.Size = new System.Drawing.Size(100, 20);
-            this.txtAddLogs.TabIndex = 1;
-            // 
             // btnAddLPS
             // 
             this.btnAddLPS.Location = new System.Drawing.Point(111, 37);
@@ -77,6 +71,7 @@
             this.btnAddLPS.TabIndex = 2;
             this.btnAddLPS.Text = "+ LPS";
             this.btnAddLPS.UseVisualStyleBackColor = true;
+            this.btnAddLPS.Click += new System.EventHandler(this.btnAddLPS_Click);
             // 
             // txtAddLPS
             // 
@@ -93,6 +88,7 @@
             this.btnAddClicker.TabIndex = 4;
             this.btnAddClicker.Text = "+ Clicker";
             this.btnAddClicker.UseVisualStyleBackColor = true;
+            this.btnAddClicker.Click += new System.EventHandler(this.btnAddClicker_Click);
             // 
             // txtAddClicker
             // 
@@ -229,11 +225,24 @@
             this.txtAddExtractor.Size = new System.Drawing.Size(100, 20);
             this.txtAddExtractor.TabIndex = 21;
             // 
+            // txtAddLogs
+            // 
+            this.txtAddLogs.Location = new System.Drawing.Point(5, 13);
+            this.txtAddLogs.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.txtAddLogs.Name = "txtAddLogs";
+            this.txtAddLogs.Size = new System.Drawing.Size(100, 20);
+            this.txtAddLogs.TabIndex = 22;
+            // 
             // DebugScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(204, 292);
+            this.Controls.Add(this.txtAddLogs);
             this.Controls.Add(this.txtAddExtractor);
             this.Controls.Add(this.btnAddExtractor);
             this.Controls.Add(this.txtAddPortal);
@@ -254,7 +263,6 @@
             this.Controls.Add(this.btnAddClicker);
             this.Controls.Add(this.txtAddLPS);
             this.Controls.Add(this.btnAddLPS);
-            this.Controls.Add(this.txtAddLogs);
             this.Controls.Add(this.btnAddLogs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
@@ -262,6 +270,7 @@
             this.Name = "DebugScreen";
             this.Text = "Debug Screen";
             this.Load += new System.EventHandler(this.DebugScreen_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddLogs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,7 +279,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnAddLogs;
-        private System.Windows.Forms.TextBox txtAddLogs;
         private System.Windows.Forms.Button btnAddLPS;
         private System.Windows.Forms.TextBox txtAddLPS;
         private System.Windows.Forms.Button btnAddClicker;
@@ -291,5 +299,6 @@
         private System.Windows.Forms.TextBox txtAddPortal;
         private System.Windows.Forms.Button btnAddExtractor;
         private System.Windows.Forms.TextBox txtAddExtractor;
+        private System.Windows.Forms.NumericUpDown txtAddLogs;
     }
 }

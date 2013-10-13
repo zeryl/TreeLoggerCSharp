@@ -14,15 +14,30 @@ namespace Tree_Logger_CSharp
 {
     public partial class DebugScreen : Form
     {
-        public DebugScreen()
+        private readonly TreeLogger _game;
+        public DebugScreen(TreeLogger gameForm)
         {
+            _game = gameForm;
             InitializeComponent(); //WIP
         }
+
         private void DebugScreen_Load(object sender, EventArgs e)
         {
         }
+
         private void btnAddLogs_Click(object sender, EventArgs e)
         {
+            _game.Logs += Convert.ToInt32(this.txtAddLogs.Text);
+        }
+
+        private void btnAddLPS_Click(object sender, EventArgs e)
+        {
+            _game.DebugLPS += Convert.ToInt32(this.txtAddLPS.Text);
+        }
+
+        private void btnAddClicker_Click(object sender, EventArgs e)
+        {
+            _game.Clicker += Convert.ToInt32(this.txtAddClicker.Text);
         }
     }
 }

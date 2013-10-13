@@ -14,12 +14,13 @@ namespace Tree_Logger_CSharp
     public partial class TreeLogger : Form
     {
         
-        //Created by DeeBeeR
-        //Version 1.0.2.7
+        //Created by DeeBeeR -- http://www.reddit.com/u/DeeBeeR
+        //Also contributed to by the Reddit and GitHub community!
 
         #region Variables
         //Other Variables
         bool CheckBuyBuildings = false; //Checks if the buildings panel is open
+        int AutoSaveTime = 60; //Time for autosave
 
         //Log Variables
         public double Logs = 0; //Amount of Logs
@@ -83,17 +84,7 @@ namespace Tree_Logger_CSharp
             //Center game to the screen
             CenterToScreen();
 
-            //////////////////////////////////////////////////////
-            //Set application caption to total Logs             //
-            //Text = Logs.ToString() + " Logs";                 //
-            //                                                  //
-            //Display Logs, LogsPerSecond and SelfClickLogs     //
-            //lblLogsInfo.Text = Logs.ToString();               //
-            //lblLPS.Text = LogsPerSecond.ToString();           //
-            //lblLogsClicked.Text = SelfClickLogs.ToString();   //
-            //Commented out due to not needed until saves, maybe//
-            //it might not be needed at all                     //
-            //////////////////////////////////////////////////////
+            #region Load save
             // Load up save, if exists
             this.Logs = Properties.Settings.Default.Logs;
             this.LogsPerSecond = Properties.Settings.Default.LogsPerSecond;
@@ -109,9 +100,10 @@ namespace Tree_Logger_CSharp
             this.Alchemy = Properties.Settings.Default.Alchemy;
             this.Portal = Properties.Settings.Default.Portal;
             this.Extractor = Properties.Settings.Default.Extractor;
+            #endregion
 
         }
-
+        #region Tree Click button
         private void btnTree_Click(object sender, EventArgs e)
         {
             Logs += ClickLogs; //Add Logs from ClickLogs
@@ -120,10 +112,12 @@ namespace Tree_Logger_CSharp
             lblLogsInfo.Focus(); //Focus label to prevent holding enter/return abuse
 
         }
+        #endregion
 
+        #region All the label refreshing and LPS events
         private void tmrLPS_Tick(object sender, EventArgs e)
         {
-            #region All the label refreshing and LPS stuff
+            
             //Add all *LPS variables to LogsPerSecond
             LogsPerSecond = TotalLPS();
 
@@ -228,11 +222,8 @@ namespace Tree_Logger_CSharp
             //Refresh ExtractorInfo to see how many owned and the price
             lblExtractorInfo.Text = string.Format("Extractors owned: {0:n0}\nExtractor price: {1:n0}",
                 Extractor, ExtractorPrice);
-#endregion
-
-            
-
         }
+        #endregion
 
         #region Total LPS
         private decimal TotalLPS()
@@ -443,6 +434,8 @@ namespace Tree_Logger_CSharp
         #region Form Closing
         private void TreeLogger_FormClosing(object sender, FormClosingEventArgs e)
         {
+
+            //Save the game
             Properties.Settings.Default.Logs = this.Logs;
             Properties.Settings.Default.LogsPerSecond = this.LogsPerSecond;
             Properties.Settings.Default.ClickLogs = this.ClickLogs;
@@ -500,7 +493,37 @@ namespace Tree_Logger_CSharp
                 DebugScreen showDebugScreen = new DebugScreen(this); //Create a new instance of the debug screen
                 showDebugScreen.Show(); //Show the debug screen
             }
-        #endregion
         }
+        #endregion
+
+        #region Auto Save
+        private void tmrAutoSave_Tick(object sender, EventArgs e)
+        {
+
+            //Auto save the game
+            if (AutoSaveTime > 0) { AutoSaveTime--; lblSaved.Visible = false; }
+            else
+            {
+                //Save to application settings
+                Properties.Settings.Default.Logs = this.Logs;
+                Properties.Settings.Default.LogsPerSecond = this.LogsPerSecond;
+                Properties.Settings.Default.ClickLogs = this.ClickLogs;
+                Properties.Settings.Default.SelfClickLogs = this.SelfClickLogs;
+                Properties.Settings.Default.TotalTimesClicked = this.TotalTimesClicked;
+                Properties.Settings.Default.Clicker = this.Clicker;
+                Properties.Settings.Default.Lumberjack = this.Lumberjack;
+                Properties.Settings.Default.LumberYard = this.LumberYard;
+                Properties.Settings.Default.Sawmill = this.Sawmill;
+                Properties.Settings.Default.Forest = this.Forest;
+                Properties.Settings.Default.Shipment = this.Shipment;
+                Properties.Settings.Default.Alchemy = this.Alchemy;
+                Properties.Settings.Default.Portal = this.Portal;
+                Properties.Settings.Default.Extractor = this.Extractor;
+                Properties.Settings.Default.Save();
+                lblSaved.Visible = true;
+                AutoSaveTime = 60;
+            }
+        }
+        #endregion
     }
 }

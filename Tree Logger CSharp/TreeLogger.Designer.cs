@@ -61,6 +61,8 @@
             this.lblExtractorInfo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBuyBuildings = new System.Windows.Forms.Button();
+            this.tmrAutoSave = new System.Windows.Forms.Timer(this.components);
+            this.lblSaved = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -463,11 +465,28 @@
             this.btnBuyBuildings.UseVisualStyleBackColor = false;
             this.btnBuyBuildings.Click += new System.EventHandler(this.btnBuyBuildings_Click);
             // 
+            // tmrAutoSave
+            // 
+            this.tmrAutoSave.Enabled = true;
+            this.tmrAutoSave.Interval = 1000;
+            this.tmrAutoSave.Tick += new System.EventHandler(this.tmrAutoSave_Tick);
+            // 
+            // lblSaved
+            // 
+            this.lblSaved.AutoSize = true;
+            this.lblSaved.Location = new System.Drawing.Point(95, 207);
+            this.lblSaved.Name = "lblSaved";
+            this.lblSaved.Size = new System.Drawing.Size(41, 13);
+            this.lblSaved.TabIndex = 38;
+            this.lblSaved.Text = "Saved!";
+            this.lblSaved.Visible = false;
+            // 
             // TreeLogger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(240, 227);
+            this.Controls.Add(this.lblSaved);
             this.Controls.Add(this.btnBuyBuildings);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblLogsInfo);
@@ -522,6 +541,8 @@
         private System.Windows.Forms.Label lblExtractorInfo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnBuyBuildings;
+        private System.Windows.Forms.Timer tmrAutoSave;
+        private System.Windows.Forms.Label lblSaved;
     }
 }
 

@@ -84,6 +84,7 @@ namespace Tree_Logger_CSharp
             //Center game to the screen
             CenterToScreen();
 
+            #region Load save
             // Load up save, if exists
             this.Logs = Properties.Settings.Default.Logs;
             this.LogsPerSecond = Properties.Settings.Default.LogsPerSecond;
@@ -99,9 +100,10 @@ namespace Tree_Logger_CSharp
             this.Alchemy = Properties.Settings.Default.Alchemy;
             this.Portal = Properties.Settings.Default.Portal;
             this.Extractor = Properties.Settings.Default.Extractor;
+            #endregion
 
         }
-
+        #region Tree Click button
         private void btnTree_Click(object sender, EventArgs e)
         {
             Logs += ClickLogs; //Add Logs from ClickLogs
@@ -110,6 +112,8 @@ namespace Tree_Logger_CSharp
             lblLogsInfo.Focus(); //Focus label to prevent holding enter/return abuse
 
         }
+        #endregion
+
         #region All the label refreshing and LPS events
         private void tmrLPS_Tick(object sender, EventArgs e)
         {

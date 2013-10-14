@@ -11,7 +11,7 @@
     <Setting Name="ClickLogs" Type="System.Double" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="SelfClickLogs" Type="System.Double" Scope="User">
+    <Setting Name="SelfClickedLogs" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="TotalTimesClicked" Type="System.Int32" Scope="User">

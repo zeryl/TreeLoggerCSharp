@@ -63,7 +63,12 @@
             this.btnBuyBuildings = new System.Windows.Forms.Button();
             this.tmrAutoSave = new System.Windows.Forms.Timer(this.components);
             this.lblSaved = new System.Windows.Forms.Label();
+            this.btnOption = new System.Windows.Forms.Button();
+            this.pOptionsPanel = new System.Windows.Forms.Panel();
+            this.btnManualSave = new System.Windows.Forms.Button();
+            this.btnResetSave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.pOptionsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnTree
@@ -474,18 +479,63 @@
             // lblSaved
             // 
             this.lblSaved.AutoSize = true;
-            this.lblSaved.Location = new System.Drawing.Point(95, 207);
+            this.lblSaved.Location = new System.Drawing.Point(97, 208);
             this.lblSaved.Name = "lblSaved";
-            this.lblSaved.Size = new System.Drawing.Size(41, 13);
+            this.lblSaved.Size = new System.Drawing.Size(61, 13);
             this.lblSaved.TabIndex = 38;
-            this.lblSaved.Text = "Saved!";
+            this.lblSaved.Text = "Autosaved!";
             this.lblSaved.Visible = false;
+            // 
+            // btnOption
+            // 
+            this.btnOption.BackColor = System.Drawing.Color.BurlyWood;
+            this.btnOption.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOption.Location = new System.Drawing.Point(2, 132);
+            this.btnOption.Name = "btnOption";
+            this.btnOption.Size = new System.Drawing.Size(100, 23);
+            this.btnOption.TabIndex = 39;
+            this.btnOption.TabStop = false;
+            this.btnOption.Text = "Options";
+            this.btnOption.UseVisualStyleBackColor = false;
+            this.btnOption.Click += new System.EventHandler(this.btnOption_Click);
+            // 
+            // pOptionsPanel
+            // 
+            this.pOptionsPanel.Controls.Add(this.btnManualSave);
+            this.pOptionsPanel.Controls.Add(this.btnResetSave);
+            this.pOptionsPanel.Location = new System.Drawing.Point(2, 159);
+            this.pOptionsPanel.Name = "pOptionsPanel";
+            this.pOptionsPanel.Size = new System.Drawing.Size(79, 48);
+            this.pOptionsPanel.TabIndex = 40;
+            this.pOptionsPanel.Visible = false;
+            // 
+            // btnManualSave
+            // 
+            this.btnManualSave.Location = new System.Drawing.Point(-1, 23);
+            this.btnManualSave.Name = "btnManualSave";
+            this.btnManualSave.Size = new System.Drawing.Size(78, 23);
+            this.btnManualSave.TabIndex = 1;
+            this.btnManualSave.Text = "Manual Save";
+            this.btnManualSave.UseVisualStyleBackColor = true;
+            this.btnManualSave.Click += new System.EventHandler(this.btnManualSave_Click);
+            // 
+            // btnResetSave
+            // 
+            this.btnResetSave.Location = new System.Drawing.Point(-1, 0);
+            this.btnResetSave.Name = "btnResetSave";
+            this.btnResetSave.Size = new System.Drawing.Size(78, 23);
+            this.btnResetSave.TabIndex = 0;
+            this.btnResetSave.Text = "Reset Save";
+            this.btnResetSave.UseVisualStyleBackColor = true;
+            this.btnResetSave.Click += new System.EventHandler(this.btnResetSave_Click);
             // 
             // TreeLogger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(240, 227);
+            this.Controls.Add(this.pOptionsPanel);
+            this.Controls.Add(this.btnOption);
             this.Controls.Add(this.lblSaved);
             this.Controls.Add(this.btnBuyBuildings);
             this.Controls.Add(this.panel1);
@@ -502,6 +552,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TreeLogger_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pOptionsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,6 +594,10 @@
         private System.Windows.Forms.Button btnBuyBuildings;
         private System.Windows.Forms.Timer tmrAutoSave;
         private System.Windows.Forms.Label lblSaved;
+        private System.Windows.Forms.Button btnOption;
+        private System.Windows.Forms.Panel pOptionsPanel;
+        private System.Windows.Forms.Button btnManualSave;
+        private System.Windows.Forms.Button btnResetSave;
     }
 }
 

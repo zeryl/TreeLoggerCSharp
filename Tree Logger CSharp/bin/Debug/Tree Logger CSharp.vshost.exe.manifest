@@ -49,17 +49,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NkxRWd0XaWMXuhcsUjZistV3EU3h9SyqegDyzJTHTWk=</dsig:DigestValue>
+        <dsig:DigestValue>+sS5O+dHfgqa0hnGklVvu8WAuJHGwnB+8flnSbO2hDU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Tree Logger CSharp.exe.config" size="2713">
+  <file name="Tree Logger CSharp.exe.config" size="2715">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>w7pG/1CB4sgKnuhz8YR5Wl9aqKzm6mwsD7WGgxszoyk=</dsig:DigestValue>
+      <dsig:DigestValue>euE86I71UV2Vfq/vDP0Wk7uWt1nbDLzFQR4bfzPcBdQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

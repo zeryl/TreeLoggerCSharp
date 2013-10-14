@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tree Logger CSharp.exe" size="36864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tree Logger CSharp.exe" size="37888">
       <assemblyIdentity name="Tree Logger CSharp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QgXmYF/Uo36eDE+NelBoRYH+sLXkEpA2U1vNLmlKzAM=</dsig:DigestValue>
+        <dsig:DigestValue>aVMqMm+/p/MV2HzV8R5W189xd2ron1vj2e1S28qd/F4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

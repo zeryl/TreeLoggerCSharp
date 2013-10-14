@@ -79,6 +79,7 @@
     <Compile Include="DebugScreen.Designer.cs">
       <DependentUpon>DebugScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameState.cs" />
     <Compile Include="TreeLogger.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -37,42 +37,42 @@ namespace Tree_Logger_CSharp
         double ClickerLPS = 0.1;
 
         //Lumberjack Variables
-        int Lumberjack = 0;
+        public int Lumberjack = 0;
         double LumberjackPrice = 100;
         double LumberjackLPS = 0.5;
 
         //Lumber Yard Variables
-        int LumberYard = 0;
+        public int LumberYard = 0;
         double LumberYardPrice = 500;
         double LumberYardLPS = 2;
 
         //Sawmill Variables
-        int Sawmill = 0;
+        public int Sawmill = 0;
         double SawmillPrice = 3000;
         double SawmillLPS = 10;
 
         //Forest Variables
-        int Forest = 0;
+        public int Forest = 0;
         double ForestPrice = 10000;
         double ForestLPS = 40;
 
         //Shipment Variables
-        int Shipment = 0;
+        public int Shipment = 0;
         double ShipmentPrice = 40000;
         double ShipmentLPS = 100;
 
         //Alchemy Lab Variables
-        int Alchemy = 0;
+        public int Alchemy = 0;
         double AlchemyPrice = 200000;
         double AlchemyLPS = 400;
 
         //Portal Variables
-        int Portal = 0;
+        public int Portal = 0;
         double PortalPrice = 1666666;
         double PortalLPS = 6666;
 
         //Extractor Variables
-        int Extractor = 0;
+        public int Extractor = 0;
         double ExtractorPrice = 123456789;
         double ExtractorLPS = 98765;
         #endregion

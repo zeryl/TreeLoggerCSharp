@@ -30,27 +30,37 @@
         {
             this.btnAddLogs = new System.Windows.Forms.Button();
             this.btnAddLPS = new System.Windows.Forms.Button();
-            this.txtAddLPS = new System.Windows.Forms.TextBox();
             this.btnAddClicker = new System.Windows.Forms.Button();
-            this.txtAddClicker = new System.Windows.Forms.TextBox();
             this.btnAddLumberjack = new System.Windows.Forms.Button();
-            this.txtAddLumberjack = new System.Windows.Forms.TextBox();
             this.btnAddLumberYard = new System.Windows.Forms.Button();
-            this.txtAddLumberYard = new System.Windows.Forms.TextBox();
             this.btnAddSawmill = new System.Windows.Forms.Button();
-            this.txtAddSawmill = new System.Windows.Forms.TextBox();
-            this.txtAddForest = new System.Windows.Forms.TextBox();
             this.btnAddForest = new System.Windows.Forms.Button();
             this.btnAddShipment = new System.Windows.Forms.Button();
-            this.txtAddShipment = new System.Windows.Forms.TextBox();
             this.btnAddAlchemyLab = new System.Windows.Forms.Button();
-            this.txtAddAlchemyLab = new System.Windows.Forms.TextBox();
             this.btnAddPortal = new System.Windows.Forms.Button();
-            this.txtAddPortal = new System.Windows.Forms.TextBox();
             this.btnAddExtractor = new System.Windows.Forms.Button();
-            this.txtAddExtractor = new System.Windows.Forms.TextBox();
             this.txtAddLogs = new System.Windows.Forms.NumericUpDown();
+            this.txtAddLPS = new System.Windows.Forms.NumericUpDown();
+            this.txtAddClicker = new System.Windows.Forms.NumericUpDown();
+            this.txtAddLumberjack = new System.Windows.Forms.NumericUpDown();
+            this.txtAddLumberYard = new System.Windows.Forms.NumericUpDown();
+            this.txtAddSawmill = new System.Windows.Forms.NumericUpDown();
+            this.txtAddForest = new System.Windows.Forms.NumericUpDown();
+            this.txtAddShipment = new System.Windows.Forms.NumericUpDown();
+            this.txtAddAlchemyLab = new System.Windows.Forms.NumericUpDown();
+            this.txtAddPortal = new System.Windows.Forms.NumericUpDown();
+            this.txtAddExtractor = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddLogs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddLPS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddClicker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddLumberjack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddLumberYard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddSawmill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddForest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddShipment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddAlchemyLab)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddPortal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddExtractor)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddLogs
@@ -73,13 +83,6 @@
             this.btnAddLPS.UseVisualStyleBackColor = true;
             this.btnAddLPS.Click += new System.EventHandler(this.btnAddLPS_Click);
             // 
-            // txtAddLPS
-            // 
-            this.txtAddLPS.Location = new System.Drawing.Point(5, 39);
-            this.txtAddLPS.Name = "txtAddLPS";
-            this.txtAddLPS.Size = new System.Drawing.Size(100, 20);
-            this.txtAddLPS.TabIndex = 3;
-            // 
             // btnAddClicker
             // 
             this.btnAddClicker.Location = new System.Drawing.Point(111, 63);
@@ -90,13 +93,6 @@
             this.btnAddClicker.UseVisualStyleBackColor = true;
             this.btnAddClicker.Click += new System.EventHandler(this.btnAddClicker_Click);
             // 
-            // txtAddClicker
-            // 
-            this.txtAddClicker.Location = new System.Drawing.Point(5, 65);
-            this.txtAddClicker.Name = "txtAddClicker";
-            this.txtAddClicker.Size = new System.Drawing.Size(100, 20);
-            this.txtAddClicker.TabIndex = 5;
-            // 
             // btnAddLumberjack
             // 
             this.btnAddLumberjack.Location = new System.Drawing.Point(111, 89);
@@ -105,13 +101,7 @@
             this.btnAddLumberjack.TabIndex = 6;
             this.btnAddLumberjack.Text = "+ Lumberjack";
             this.btnAddLumberjack.UseVisualStyleBackColor = true;
-            // 
-            // txtAddLumberjack
-            // 
-            this.txtAddLumberjack.Location = new System.Drawing.Point(5, 91);
-            this.txtAddLumberjack.Name = "txtAddLumberjack";
-            this.txtAddLumberjack.Size = new System.Drawing.Size(100, 20);
-            this.txtAddLumberjack.TabIndex = 7;
+            this.btnAddLumberjack.Click += new System.EventHandler(this.btnAddLumberjack_Click);
             // 
             // btnAddLumberYard
             // 
@@ -121,13 +111,7 @@
             this.btnAddLumberYard.TabIndex = 8;
             this.btnAddLumberYard.Text = "+ Lumber Yard";
             this.btnAddLumberYard.UseVisualStyleBackColor = true;
-            // 
-            // txtAddLumberYard
-            // 
-            this.txtAddLumberYard.Location = new System.Drawing.Point(5, 117);
-            this.txtAddLumberYard.Name = "txtAddLumberYard";
-            this.txtAddLumberYard.Size = new System.Drawing.Size(100, 20);
-            this.txtAddLumberYard.TabIndex = 9;
+            this.btnAddLumberYard.Click += new System.EventHandler(this.btnAddLumberYard_Click);
             // 
             // btnAddSawmill
             // 
@@ -137,20 +121,7 @@
             this.btnAddSawmill.TabIndex = 10;
             this.btnAddSawmill.Text = "+ Sawmill";
             this.btnAddSawmill.UseVisualStyleBackColor = true;
-            // 
-            // txtAddSawmill
-            // 
-            this.txtAddSawmill.Location = new System.Drawing.Point(5, 141);
-            this.txtAddSawmill.Name = "txtAddSawmill";
-            this.txtAddSawmill.Size = new System.Drawing.Size(100, 20);
-            this.txtAddSawmill.TabIndex = 11;
-            // 
-            // txtAddForest
-            // 
-            this.txtAddForest.Location = new System.Drawing.Point(5, 168);
-            this.txtAddForest.Name = "txtAddForest";
-            this.txtAddForest.Size = new System.Drawing.Size(100, 20);
-            this.txtAddForest.TabIndex = 12;
+            this.btnAddSawmill.Click += new System.EventHandler(this.btnAddSawmill_Click);
             // 
             // btnAddForest
             // 
@@ -160,6 +131,7 @@
             this.btnAddForest.TabIndex = 13;
             this.btnAddForest.Text = "+ Forest";
             this.btnAddForest.UseVisualStyleBackColor = true;
+            this.btnAddForest.Click += new System.EventHandler(this.btnAddForest_Click);
             // 
             // btnAddShipment
             // 
@@ -169,13 +141,7 @@
             this.btnAddShipment.TabIndex = 14;
             this.btnAddShipment.Text = "+ Shipment";
             this.btnAddShipment.UseVisualStyleBackColor = true;
-            // 
-            // txtAddShipment
-            // 
-            this.txtAddShipment.Location = new System.Drawing.Point(5, 194);
-            this.txtAddShipment.Name = "txtAddShipment";
-            this.txtAddShipment.Size = new System.Drawing.Size(100, 20);
-            this.txtAddShipment.TabIndex = 15;
+            this.btnAddShipment.Click += new System.EventHandler(this.btnAddShipment_Click);
             // 
             // btnAddAlchemyLab
             // 
@@ -185,13 +151,7 @@
             this.btnAddAlchemyLab.TabIndex = 16;
             this.btnAddAlchemyLab.Text = "+ Alchemy Lab";
             this.btnAddAlchemyLab.UseVisualStyleBackColor = true;
-            // 
-            // txtAddAlchemyLab
-            // 
-            this.txtAddAlchemyLab.Location = new System.Drawing.Point(5, 218);
-            this.txtAddAlchemyLab.Name = "txtAddAlchemyLab";
-            this.txtAddAlchemyLab.Size = new System.Drawing.Size(100, 20);
-            this.txtAddAlchemyLab.TabIndex = 17;
+            this.btnAddAlchemyLab.Click += new System.EventHandler(this.btnAddAlchemyLab_Click);
             // 
             // btnAddPortal
             // 
@@ -201,13 +161,7 @@
             this.btnAddPortal.TabIndex = 18;
             this.btnAddPortal.Text = "+ Portal";
             this.btnAddPortal.UseVisualStyleBackColor = true;
-            // 
-            // txtAddPortal
-            // 
-            this.txtAddPortal.Location = new System.Drawing.Point(5, 243);
-            this.txtAddPortal.Name = "txtAddPortal";
-            this.txtAddPortal.Size = new System.Drawing.Size(100, 20);
-            this.txtAddPortal.TabIndex = 19;
+            this.btnAddPortal.Click += new System.EventHandler(this.btnAddPortal_Click);
             // 
             // btnAddExtractor
             // 
@@ -217,51 +171,165 @@
             this.btnAddExtractor.TabIndex = 20;
             this.btnAddExtractor.Text = "+ Extractor";
             this.btnAddExtractor.UseVisualStyleBackColor = true;
-            // 
-            // txtAddExtractor
-            // 
-            this.txtAddExtractor.Location = new System.Drawing.Point(5, 268);
-            this.txtAddExtractor.Name = "txtAddExtractor";
-            this.txtAddExtractor.Size = new System.Drawing.Size(100, 20);
-            this.txtAddExtractor.TabIndex = 21;
+            this.btnAddExtractor.Click += new System.EventHandler(this.btnAddExtractor_Click);
             // 
             // txtAddLogs
             // 
-            this.txtAddLogs.Location = new System.Drawing.Point(5, 13);
+            this.txtAddLogs.Location = new System.Drawing.Point(5, 10);
             this.txtAddLogs.Maximum = new decimal(new int[] {
-            1215752192,
-            23,
+            100000,
+            0,
             0,
             0});
             this.txtAddLogs.Name = "txtAddLogs";
             this.txtAddLogs.Size = new System.Drawing.Size(100, 20);
             this.txtAddLogs.TabIndex = 22;
             // 
+            // txtAddLPS
+            // 
+            this.txtAddLPS.Location = new System.Drawing.Point(5, 37);
+            this.txtAddLPS.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.txtAddLPS.Name = "txtAddLPS";
+            this.txtAddLPS.Size = new System.Drawing.Size(100, 20);
+            this.txtAddLPS.TabIndex = 23;
+            // 
+            // txtAddClicker
+            // 
+            this.txtAddClicker.Location = new System.Drawing.Point(5, 63);
+            this.txtAddClicker.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.txtAddClicker.Name = "txtAddClicker";
+            this.txtAddClicker.Size = new System.Drawing.Size(100, 20);
+            this.txtAddClicker.TabIndex = 24;
+            // 
+            // txtAddLumberjack
+            // 
+            this.txtAddLumberjack.Location = new System.Drawing.Point(5, 89);
+            this.txtAddLumberjack.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.txtAddLumberjack.Name = "txtAddLumberjack";
+            this.txtAddLumberjack.Size = new System.Drawing.Size(100, 20);
+            this.txtAddLumberjack.TabIndex = 25;
+            // 
+            // txtAddLumberYard
+            // 
+            this.txtAddLumberYard.Location = new System.Drawing.Point(5, 115);
+            this.txtAddLumberYard.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.txtAddLumberYard.Name = "txtAddLumberYard";
+            this.txtAddLumberYard.Size = new System.Drawing.Size(100, 20);
+            this.txtAddLumberYard.TabIndex = 26;
+            // 
+            // txtAddSawmill
+            // 
+            this.txtAddSawmill.Location = new System.Drawing.Point(5, 141);
+            this.txtAddSawmill.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.txtAddSawmill.Name = "txtAddSawmill";
+            this.txtAddSawmill.Size = new System.Drawing.Size(100, 20);
+            this.txtAddSawmill.TabIndex = 27;
+            // 
+            // txtAddForest
+            // 
+            this.txtAddForest.Location = new System.Drawing.Point(5, 166);
+            this.txtAddForest.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.txtAddForest.Name = "txtAddForest";
+            this.txtAddForest.Size = new System.Drawing.Size(100, 20);
+            this.txtAddForest.TabIndex = 28;
+            // 
+            // txtAddShipment
+            // 
+            this.txtAddShipment.Location = new System.Drawing.Point(5, 191);
+            this.txtAddShipment.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.txtAddShipment.Name = "txtAddShipment";
+            this.txtAddShipment.Size = new System.Drawing.Size(100, 20);
+            this.txtAddShipment.TabIndex = 29;
+            // 
+            // txtAddAlchemyLab
+            // 
+            this.txtAddAlchemyLab.Location = new System.Drawing.Point(5, 217);
+            this.txtAddAlchemyLab.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.txtAddAlchemyLab.Name = "txtAddAlchemyLab";
+            this.txtAddAlchemyLab.Size = new System.Drawing.Size(100, 20);
+            this.txtAddAlchemyLab.TabIndex = 30;
+            // 
+            // txtAddPortal
+            // 
+            this.txtAddPortal.Location = new System.Drawing.Point(5, 243);
+            this.txtAddPortal.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.txtAddPortal.Name = "txtAddPortal";
+            this.txtAddPortal.Size = new System.Drawing.Size(100, 20);
+            this.txtAddPortal.TabIndex = 31;
+            // 
+            // txtAddExtractor
+            // 
+            this.txtAddExtractor.Location = new System.Drawing.Point(5, 267);
+            this.txtAddExtractor.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.txtAddExtractor.Name = "txtAddExtractor";
+            this.txtAddExtractor.Size = new System.Drawing.Size(100, 20);
+            this.txtAddExtractor.TabIndex = 32;
+            // 
             // DebugScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(204, 292);
-            this.Controls.Add(this.txtAddLogs);
             this.Controls.Add(this.txtAddExtractor);
-            this.Controls.Add(this.btnAddExtractor);
             this.Controls.Add(this.txtAddPortal);
-            this.Controls.Add(this.btnAddPortal);
             this.Controls.Add(this.txtAddAlchemyLab);
-            this.Controls.Add(this.btnAddAlchemyLab);
             this.Controls.Add(this.txtAddShipment);
-            this.Controls.Add(this.btnAddShipment);
-            this.Controls.Add(this.btnAddForest);
             this.Controls.Add(this.txtAddForest);
             this.Controls.Add(this.txtAddSawmill);
-            this.Controls.Add(this.btnAddSawmill);
             this.Controls.Add(this.txtAddLumberYard);
-            this.Controls.Add(this.btnAddLumberYard);
             this.Controls.Add(this.txtAddLumberjack);
-            this.Controls.Add(this.btnAddLumberjack);
             this.Controls.Add(this.txtAddClicker);
-            this.Controls.Add(this.btnAddClicker);
             this.Controls.Add(this.txtAddLPS);
+            this.Controls.Add(this.txtAddLogs);
+            this.Controls.Add(this.btnAddExtractor);
+            this.Controls.Add(this.btnAddPortal);
+            this.Controls.Add(this.btnAddAlchemyLab);
+            this.Controls.Add(this.btnAddShipment);
+            this.Controls.Add(this.btnAddForest);
+            this.Controls.Add(this.btnAddSawmill);
+            this.Controls.Add(this.btnAddLumberYard);
+            this.Controls.Add(this.btnAddLumberjack);
+            this.Controls.Add(this.btnAddClicker);
             this.Controls.Add(this.btnAddLPS);
             this.Controls.Add(this.btnAddLogs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -271,8 +339,17 @@
             this.Text = "Debug Screen";
             this.Load += new System.EventHandler(this.DebugScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtAddLogs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddLPS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddClicker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddLumberjack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddLumberYard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddSawmill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddForest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddShipment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddAlchemyLab)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddPortal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAddExtractor)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -280,25 +357,25 @@
 
         private System.Windows.Forms.Button btnAddLogs;
         private System.Windows.Forms.Button btnAddLPS;
-        private System.Windows.Forms.TextBox txtAddLPS;
         private System.Windows.Forms.Button btnAddClicker;
-        private System.Windows.Forms.TextBox txtAddClicker;
         private System.Windows.Forms.Button btnAddLumberjack;
-        private System.Windows.Forms.TextBox txtAddLumberjack;
         private System.Windows.Forms.Button btnAddLumberYard;
-        private System.Windows.Forms.TextBox txtAddLumberYard;
         private System.Windows.Forms.Button btnAddSawmill;
-        private System.Windows.Forms.TextBox txtAddSawmill;
-        private System.Windows.Forms.TextBox txtAddForest;
         private System.Windows.Forms.Button btnAddForest;
         private System.Windows.Forms.Button btnAddShipment;
-        private System.Windows.Forms.TextBox txtAddShipment;
         private System.Windows.Forms.Button btnAddAlchemyLab;
-        private System.Windows.Forms.TextBox txtAddAlchemyLab;
         private System.Windows.Forms.Button btnAddPortal;
-        private System.Windows.Forms.TextBox txtAddPortal;
         private System.Windows.Forms.Button btnAddExtractor;
-        private System.Windows.Forms.TextBox txtAddExtractor;
         private System.Windows.Forms.NumericUpDown txtAddLogs;
+        private System.Windows.Forms.NumericUpDown txtAddLPS;
+        private System.Windows.Forms.NumericUpDown txtAddClicker;
+        private System.Windows.Forms.NumericUpDown txtAddLumberjack;
+        private System.Windows.Forms.NumericUpDown txtAddLumberYard;
+        private System.Windows.Forms.NumericUpDown txtAddSawmill;
+        private System.Windows.Forms.NumericUpDown txtAddForest;
+        private System.Windows.Forms.NumericUpDown txtAddShipment;
+        private System.Windows.Forms.NumericUpDown txtAddAlchemyLab;
+        private System.Windows.Forms.NumericUpDown txtAddPortal;
+        private System.Windows.Forms.NumericUpDown txtAddExtractor;
     }
 }
